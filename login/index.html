@@ -1,0 +1,117 @@
+<!doctype html>
+<!-- Proprietary and confidential. All rights reserved. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PULSE Platform Hub - Sign in">
+  <title>PULSE | Sign In</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23052242'/%3E%3Cpath d='M16 34h9l5-16 7 29 5-20h7' fill='none' stroke='%233a9cff' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <style>
+    :root{--navy:#072746;--navy-deep:#031b30;--ink:#092544;--blue:#2f96f4;--blue-soft:#80c9ff;--line:#d9e4ef;--muted:#64768b;--white:#fff;--shadow:0 12px 34px rgba(11,48,80,.10);--ease:cubic-bezier(.22,1,.36,1);--green:#5DCAA5}
+    *{box-sizing:border-box}html{min-width:320px;background:var(--navy-deep)}body{margin:0;color:var(--ink);font-family:"Avenir Next",Avenir,"Segoe UI",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}button,input{font:inherit}button{cursor:pointer}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .brand{display:inline-flex;align-items:center;gap:.34em;color:currentColor;font-size:2rem;font-weight:500;letter-spacing:.36em;line-height:1;text-decoration:none}.brand-icon{flex:none;width:1.1em;height:1.1em;display:grid;place-items:center;border-radius:.27em;background:linear-gradient(135deg,#185FA5,#378ADD)}.brand-icon svg{width:62%;height:62%;stroke:#fff}
+    .login-view{min-height:100svh;position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(390px,33vw);align-items:center;gap:clamp(2rem,5vw,6rem);padding:clamp(2.5rem,6vw,6rem) clamp(2rem,7vw,7rem);color:var(--white);background:#0a2945 url("/assets/login-city-sunrise.png") center 62%/cover no-repeat;isolation:isolate;overflow:hidden}.login-view::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(2,19,35,.72) 0%,rgba(2,24,43,.36) 43%,rgba(3,18,30,.12) 70%,rgba(3,18,30,.28) 100%),linear-gradient(0deg,rgba(2,15,27,.32),transparent 46%)}.login-story{min-height:min(780px,calc(100svh - 6rem));display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;max-width:760px}.login-brand .brand{font-size:clamp(2rem,2.8vw,3.35rem)}.brand-line{margin-top:1.2rem;font-size:.72rem;font-weight:600;letter-spacing:.43em;text-transform:uppercase}.login-copy{margin:auto 0;padding:4rem 0}.login-copy h1{max-width:760px;margin:0 0 1.35rem;font-size:clamp(3rem,5vw,5.3rem);font-weight:350;letter-spacing:-.045em;line-height:1.04;text-wrap:balance}.login-copy p{max-width:660px;margin:0;color:rgba(255,255,255,.88);font-size:clamp(1.1rem,1.55vw,1.48rem);line-height:1.55}.elevating{font-size:.72rem;font-weight:650;letter-spacing:.48em;text-transform:uppercase}
+    .login-card{width:100%;max-width:460px;justify-self:end;padding:clamp(2rem,3vw,2.75rem);color:var(--ink);background:rgba(255,255,255,.93);border:1px solid rgba(255,255,255,.75);border-radius:17px;box-shadow:0 28px 70px rgba(0,16,30,.32);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}.login-card h2{margin:0 0 .25rem;font-size:1.85rem;letter-spacing:-.035em}.login-card>p{margin:0 0 2rem;color:var(--muted);font-size:1.04rem}.field{margin-bottom:1.3rem}.field label{display:block;margin-bottom:.48rem;font-size:.9rem;font-weight:700}.input-wrap{position:relative}.field input{width:100%;min-height:50px;padding:0 1rem;color:var(--ink);background:rgba(255,255,255,.82);border:1px solid #b8c7d5;border-radius:7px;outline:none;transition:border-color .2s,box-shadow .2s,background .2s}.field input:focus{background:#fff;border-color:var(--blue);box-shadow:0 0 0 4px rgba(47,150,244,.14)}.input-wrap input{padding-right:3.2rem}.eye-btn{position:absolute;top:50%;right:.75rem;width:34px;height:34px;transform:translateY(-50%);border:0;border-radius:50%;color:#61758a;background:transparent}.eye-btn:hover{background:#edf5fc}.forgot{display:block;width:max-content;margin:-.55rem 0 1.45rem auto;color:#0876df;font-size:.88rem;text-decoration:none}.forgot:hover{text-decoration:underline}.primary-btn{width:100%;min-height:53px;border-radius:7px;transition:transform .18s var(--ease),box-shadow .18s,border-color .18s;display:flex;align-items:center;justify-content:center;gap:.85rem;color:#fff;border:1px solid #0b3a65;background:linear-gradient(110deg,#082e52,#0a4678);box-shadow:0 8px 18px rgba(5,51,90,.18)}.primary-btn:hover{transform:translateY(-2px);box-shadow:0 12px 24px rgba(5,51,90,.27)}.primary-btn[disabled]{opacity:.7;cursor:default;transform:none!important}.login-note{min-height:1.25rem;margin:1rem 0 -1rem;color:#49677f;font-size:.84rem;text-align:center}
+    .field-error{display:none;color:#c23a4b;font-size:.84rem;margin-top:.5rem}
+    .toast{position:fixed;left:50%;bottom:1.6rem;z-index:100;padding:.8rem 1.1rem;color:#fff;background:#082d50;border-radius:8px;box-shadow:var(--shadow);opacity:0;visibility:hidden;transform:translate(-50%,14px);transition:.25s}.toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+    
+    .overlay{display:none;position:fixed;inset:0;z-index:300;overflow-y:auto;background:#f4f7fa}
+    .overlay.active{display:block}
+    .overlay-hero{position:relative;overflow:hidden;padding:clamp(2.2rem,4vw,3rem) clamp(1.5rem,4vw,3.6rem) clamp(3.2rem,5vw,3.8rem);color:#fff;background:#062a4b url("/assets/login-city-sunrise.png") center 55%/cover no-repeat;isolation:isolate}
+    .overlay-hero::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(3,27,49,.94),rgba(4,39,69,.84) 55%,rgba(7,50,86,.6))}
+    .overlay-brand{display:inline-flex;align-items:center;gap:.5rem;color:#fff;font-size:1.15rem;font-weight:600;letter-spacing:.2em;text-decoration:none;margin-bottom:1.5rem}
+    .overlay-brand .brand-icon{width:1.5em;height:1.5em}
+    .overlay-hero h1{margin:0 0 .4rem;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;letter-spacing:-.03em}
+    .overlay-hero p{margin:0;max-width:520px;color:rgba(255,255,255,.82);font-size:1rem;line-height:1.55}
+    .overlay-card{width:min(520px,calc(100% - 3rem));margin:2.5rem auto 0;padding:0;position:relative;z-index:2;background:none;border:0;box-shadow:none;text-align:left}
+    .overlay-badge{width:48px;height:48px;background:#e9f5ff;border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:1.1rem;color:#1576c8}
+    .overlay-badge.success{background:rgba(93,202,165,.14);color:#2f9d75}
+    .overlay-badge svg{width:24px;height:24px}
+    .overlay-card h2{font-size:1.35rem;font-weight:700;color:var(--ink);margin:0 0 .4rem;letter-spacing:-.02em}
+    .overlay-sub{font-size:.92rem;color:var(--muted);line-height:1.6;margin-bottom:1.4rem}
+    .overlay-card label{display:block;margin-bottom:.4rem;font-size:.86rem;font-weight:700;color:var(--ink)}
+    .overlay-field{margin-bottom:1.1rem}
+    .overlay-card input{width:100%;min-height:46px;padding:0 1rem;color:var(--ink);background:#f8fafc;border:1px solid #b8c7d5;border-radius:7px;outline:none;transition:border-color .2s,box-shadow .2s,background .2s}
+    .overlay-card input:focus{background:#fff;border-color:var(--blue);box-shadow:0 0 0 4px rgba(47,150,244,.14)}
+    .overlay-error{display:none;color:#c23a4b;font-size:.84rem;margin:-.5rem 0 1rem}
+    .overlay-confirm{font-size:.9rem;color:#164d77;line-height:1.6;margin-bottom:1.4rem;background:#e9f5ff;border:1px solid #c5e4fb;border-radius:10px;padding:1rem 1.1rem}
+    .overlay-btn{width:100%;min-height:50px;padding:0 14px;background:linear-gradient(110deg,#082e52,#0a4678);color:white;border:none;border-radius:7px;font-size:.98rem;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 18px rgba(5,51,90,.18)}
+    .overlay-btn[disabled]{opacity:.7;cursor:default}
+    .overlay-back{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.3rem;color:#61758a;font-size:.86rem;background:none;border:0;padding:0;cursor:pointer}
+    .overlay-back:hover{color:var(--ink)}
+    @media(max-width:1180px){.login-view{grid-template-columns:1fr minmax(370px,42%);padding-left:4vw;padding-right:4vw}}
+    @media(max-width:880px){.login-view{display:flex;flex-direction:column;align-items:stretch;justify-content:center;gap:2rem;padding:2rem;background-position:center}.login-story{min-height:auto;max-width:none}.login-brand{margin-bottom:clamp(6rem,18vh,11rem)}.login-copy{padding:0}.login-copy h1{font-size:clamp(2.65rem,9vw,4.6rem)}.elevating{display:none}.login-card{align-self:flex-end;max-width:500px}}
+    @media(max-width:640px){.login-view{justify-content:flex-start;padding:1.5rem 1rem 2rem;background-position:58% center}.login-view::before{background:linear-gradient(180deg,rgba(2,18,32,.44),rgba(2,18,32,.76))}.login-brand{margin-bottom:4.5rem;padding:.35rem .25rem}.brand-line{letter-spacing:.28em;font-size:.6rem}.login-copy{margin-bottom:1rem;padding:0 .25rem}.login-copy h1{font-size:2.55rem}.login-copy p{font-size:1rem}.login-card{padding:1.6rem 1.25rem;border-radius:13px}.login-card h2{font-size:1.55rem}.login-card>p{margin-bottom:1.45rem}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+  <section class="login-view" aria-labelledby="login-title">
+    <div class="login-story">
+      <div class="login-brand"><a class="brand" href="/login/" aria-label="PULSE home"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8l4 -16l3 8h4"/></svg></span><span>PULSE</span></a><div class="brand-line">People&nbsp;&nbsp;|&nbsp;&nbsp;Insight&nbsp;&nbsp;|&nbsp;&nbsp;Progress</div></div>
+      <div class="login-copy"><h1>Greater Perspective.<br>Higher Impact.</h1><p>Integrated intelligence for a stronger,<br>safer, and more valuable built world.</p></div>
+      <div class="elevating">Elevating What's Next</div>
+    </div>
+
+    
+    <form class="login-card" id="loginForm">
+      <h2 id="login-title">Welcome to PULSE</h2>
+      <p>Sign in to access your platforms.</p>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="name@company.com" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="pin">PIN</label>
+        <div class="input-wrap">
+          <input id="pin" name="pin" type="password" placeholder="6-character PIN" maxlength="6" autocomplete="off" required>
+          <button class="eye-btn" id="eyeBtn" type="button" aria-label="Show PIN"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2.5 12s3.5-5.5 9.5-5.5 9.5 5.5 9.5 5.5-3.5 5.5-9.5 5.5S2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="2.6"/></svg></button>
+        </div>
+        <div class="field-error" id="pinError">Email and PIN didn't match. Please try again.</div>
+      </div>
+      <a class="forgot" href="#" id="forgotLink">Forgot your PIN?</a>
+      <button class="primary-btn" type="submit" id="signInBtn"><span>Sign In</span><span aria-hidden="true">⟶</span></button>
+      <div class="login-note" id="loginNote" aria-live="polite"></div>
+    </form>
+  </section>
+
+  
+  <div class="overlay" id="forgotOverlay">
+    <div class="overlay-hero">
+      <a class="overlay-brand" href="/login/"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8l4 -16l3 8h4"/></svg></span><span>PULSE</span></a>
+      <h1 id="forgotTitle">Forgot your PIN?</h1>
+      <p id="forgotIntro">Enter your email and we'll send a one-time PIN to that address, so you can sign back in and choose a new one.</p>
+    </div>
+    <div class="overlay-card">
+      <div class="overlay-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
+      <div id="forgotFormWrap">
+        <div class="overlay-field"><label for="forgotEmailInput">Email</label><input type="email" id="forgotEmailInput" placeholder="name@company.com" autocomplete="off"></div>
+        <div class="overlay-error" id="forgotError"></div>
+        <button class="overlay-btn" id="forgotSendBtn" type="button"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>Send one-time PIN</button>
+      </div>
+      <div class="overlay-confirm" id="forgotConfirm" style="display:none"></div>
+      <button class="overlay-back" id="forgotBackBtn" type="button"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>Back to login</button>
+    </div>
+  </div>
+
+  
+  <div class="overlay" id="setupOverlay">
+    <div class="overlay-hero">
+      <a class="overlay-brand" href="/login/"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8l4 -16l3 8h4"/></svg></span><span>PULSE</span></a>
+      <h1>Choose a New Pin</h1>
+      <p>This is a one-time step. Pick a 6-character PIN (letters and/or numbers) that's different from the one you just used, you'll use this one to sign in from now on.</p>
+    </div>
+    <div class="overlay-card">
+      <div class="overlay-badge success"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+      <div class="overlay-field"><label for="newPinInput">New PIN</label><input type="password" id="newPinInput" placeholder="New 6-character PIN" maxlength="6" autocomplete="off"></div>
+      <div class="overlay-field"><label for="confirmPinInput">Confirm new PIN</label><input type="password" id="confirmPinInput" placeholder="Confirm new PIN" maxlength="6" autocomplete="off"></div>
+      <div class="overlay-error" id="setupError"></div>
+      <button class="overlay-btn" id="saveNewPinBtn" type="button"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Save my PIN</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>(()=>{const WORKER_URL="https://pulse-hub-api.misty-munoz.workers.dev";const form=document.getElementById("loginForm"),email=document.getElementById("email"),pin=document.getElementById("pin"),eye=document.getElementById("eyeBtn"),note=document.getElementById("loginNote"),signInBtn=document.getElementById("signInBtn"),forgotLink=document.getElementById("forgotLink"),pinError=document.getElementById("pinError"),toast=document.getElementById("toast");let timer;const showToast=message=>{toast.textContent=message;toast.classList.add("show");clearTimeout(timer);timer=setTimeout(()=>toast.classList.remove("show"),2400)};let pendingToken=null;eye.addEventListener("click",()=>{const showing=pin.type==="text";pin.type=showing?"password":"text";eye.setAttribute("aria-label",showing?"Show PIN":"Hide PIN")});form.addEventListener("submit",async event=>{event.preventDefault();if(!form.reportValidity())return;pinError.style.display="none";signInBtn.setAttribute("disabled","");note.textContent="Verifying…";let data=null;try{const res=await fetch(`${WORKER_URL}/login`,{method:"POST",credentials:"include",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email.value.trim(),pin:pin.value.trim()})});data=await res.json()}catch(e){console.error("Login failed:",e);signInBtn.removeAttribute("disabled");note.textContent="";pinError.textContent="Could not reach PULSE. Check your connection and try again.";pinError.style.display="block";return}signInBtn.removeAttribute("disabled");note.textContent="";if(!data||!data.ok){pinError.textContent=data&&data.message||"Email and PIN didn't match. Please try again.";pinError.style.display="block";return}pendingToken=data.token;try{sessionStorage.setItem("pulse_hub_token",data.token);sessionStorage.setItem("pulse_hub_display_name",data.name||"")}catch(e){}if(data.needsPinSetup){document.getElementById("setupOverlay").classList.add("active")}else{window.location.href="/home/"}});const forgotOverlay=document.getElementById("forgotOverlay"),forgotEmailInput=document.getElementById("forgotEmailInput"),forgotFormWrap=document.getElementById("forgotFormWrap"),forgotConfirm=document.getElementById("forgotConfirm"),forgotError=document.getElementById("forgotError"),forgotIntro=document.getElementById("forgotIntro"),forgotSendBtn=document.getElementById("forgotSendBtn");forgotLink.addEventListener("click",event=>{event.preventDefault();forgotEmailInput.value=email.value||"";forgotFormWrap.style.display="block";forgotConfirm.style.display="none";forgotIntro.style.display="block";forgotError.style.display="none";forgotOverlay.classList.add("active")});forgotSendBtn.addEventListener("click",async()=>{const addr=forgotEmailInput.value.trim();if(!addr){forgotError.textContent="Enter your email to continue.";forgotError.style.display="block";return}forgotError.style.display="none";forgotSendBtn.setAttribute("disabled","");let data=null;try{const res=await fetch(`${WORKER_URL}/forgot-pin`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:addr})});data=await res.json()}catch(e){console.error("Forgot-PIN request failed:",e)}forgotSendBtn.removeAttribute("disabled");forgotFormWrap.style.display="none";forgotIntro.style.display="none";forgotConfirm.style.display="block";forgotConfirm.textContent=data&&data.message||"If that email matches an account on file, a one-time PIN has been sent to it."});document.getElementById("forgotBackBtn").addEventListener("click",()=>{forgotOverlay.classList.remove("active")});const setupOverlay=document.getElementById("setupOverlay"),newPinInput=document.getElementById("newPinInput"),confirmPinInput=document.getElementById("confirmPinInput"),setupError=document.getElementById("setupError"),saveNewPinBtn=document.getElementById("saveNewPinBtn");saveNewPinBtn.addEventListener("click",async()=>{const newPin=newPinInput.value.trim(),confirmPin=confirmPinInput.value.trim();if(!/^[A-Za-z0-9]{6}$/.test(newPin)){setupError.textContent="PIN must be 6 letters/numbers.";setupError.style.display="block";return}if(newPin!==confirmPin){setupError.textContent="PINs do not match.";setupError.style.display="block";return}setupError.style.display="none";saveNewPinBtn.setAttribute("disabled","");let data=null;try{const res=await fetch(`${WORKER_URL}/set-user-pin`,{method:"POST",credentials:"include",headers:{"Content-Type":"application/json",Authorization:"Bearer "+(pendingToken||sessionStorage.getItem("pulse_hub_token")||"")},body:JSON.stringify({newPin:newPin,confirmPin:confirmPin})});data=await res.json()}catch(e){console.error("Set-user-pin request failed:",e)}saveNewPinBtn.removeAttribute("disabled");if(!data||!data.ok){setupError.textContent=data&&data.message||"Could not save your PIN. Please try again.";setupError.style.display="block";return}showToast("PIN saved. Redirecting to your Hub…");setTimeout(()=>{window.location.href="/home/"},600)})})();</script>
+</body>
+</html>
