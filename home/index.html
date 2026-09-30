@@ -117,7 +117,7 @@
       <nav class="main-nav" aria-label="Primary navigation"><button class="active" id="homeNavBtn" type="button">Home</button><button type="button" data-message="Resources selected.">Resources</button><button type="button" data-message="Support selected.">Support</button></nav>
       <div class="profile" id="profile">
         <button class="profile-trigger" id="profileTrigger" type="button" aria-expanded="false"><span class="avatar" id="avatarInitials">P</span><span class="profile-name" id="profileName">Welcome</span><span class="chevron" aria-hidden="true"></span></button>
-        <div class="profile-menu" aria-label="Profile menu"><button type="button" data-message="Profile selected.">Your Profile</button><button id="manageUsersBtn" type="button" hidden>Manage Users</button><button id="logoutBtn" type="button">Sign Out</button><div id="hubBuildLabel" class="build-label">PULSE Hub v1i</div></div>
+        <div class="profile-menu" aria-label="Profile menu"><button type="button" data-message="Profile selected.">Your Profile</button><button id="manageUsersBtn" type="button" hidden>Manage Users</button><button id="logoutBtn" type="button">Sign Out</button><div id="hubBuildLabel" class="build-label">PULSE Hub v1j</div></div>
       </div>
     </header>
 
@@ -158,7 +158,7 @@
           <div class="metric"><div class="metric-icon" style="color:#9a5d00;background:#fdf1dc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z"/></svg></div><div><strong id="lockedCount">0</strong><span>Locked</span></div></div>
           <div class="metric"><div class="metric-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v14H4zM4 7l8 6 8-6"/></svg></div><div><strong id="pendingCount">0</strong><span>Invitations pending</span></div></div>
         </div>
-        <div class="secure-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5zM12 15v3"/></svg><span><strong>Everyone signs in with a password.</strong> When you save a new user, PULSE emails them a one-time code that works for 24 hours. They use it once, then choose their own password.</span></div>
+        <div class="secure-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5zM12 15v3"/></svg><span><strong>Everyone signs in with a password.</strong> When you save a new user, PULSE emails them a one-time code that works for 10 days. They use it once, then choose their own password.</span></div>
         <div class="user-panel">
           <div class="user-tools"><h2>People with access</h2><label class="user-search"><span class="sr-only">Search users</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="userSearch" type="search" placeholder="Search by name or email"></label></div>
           <div class="user-table-head"><span>User</span><span>Platform access</span><span>Status</span><span>Last login</span><span class="sr-only">Actions</span></div>
@@ -224,7 +224,7 @@
             <p class="access-help">Admin can manage settings and users. Other roles have role-specific access. "No access" hides that platform from someone entirely.</p>
           </section>
         </div>
-        <div class="modal-foot"><div class="invite-status"><i></i><span id="modalFootNote">The one-time code expires in 24 hours</span></div><div class="modal-actions"><button class="secondary-btn" id="cancelInviteBtn" type="button">Cancel</button><button class="save-user-btn" id="saveUserBtn" type="submit">Save &amp; Send Invite <span aria-hidden="true">&rarr;</span></button></div></div>
+        <div class="modal-foot"><div class="invite-status"><i></i><span id="modalFootNote">The one-time code expires in 10 days</span></div><div class="modal-actions"><button class="secondary-btn" id="cancelInviteBtn" type="button">Cancel</button><button class="save-user-btn" id="saveUserBtn" type="submit">Save &amp; Send Invite <span aria-hidden="true">&rarr;</span></button></div></div>
       </form>
     </div>
   </div>
