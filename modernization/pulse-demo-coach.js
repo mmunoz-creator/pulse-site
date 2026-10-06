@@ -1,4 +1,4 @@
-/*! PULSE demo coach v1 (from PULSE Portfolio v1w). Proprietary and confidential. All rights reserved. */
+/*! PULSE demo coach v1.1 (from PULSE Portfolio v1w; v1.1 2026-10-06: Why and Your Turn in Practice). Proprietary and confidential. All rights reserved. */
 // The guided-demo coach shared by the PULSE apps: a panel in the lower left with the talk track, a pulsing
 // outline around the next thing to click, and steps that move on by themselves. No libraries. One global:
 // window.PulseDemoCoach. Workflows use the shared format (see pulse-demo-coach-guide.md):
@@ -35,6 +35,11 @@
     '.pdc-lnk{border:0;background:none;padding:0;font:inherit;font-size:12px;font-weight:600;color:var(--pdc-acc,#a0522d);text-decoration:underline;cursor:pointer}',
     '.pdc-x{border:0;background:none;font-size:20px;line-height:1;cursor:pointer;color:var(--pdc-muted,#52667b);min-width:28px;min-height:28px}',
     '.pdc-fill{align-self:flex-start;min-height:32px;font-size:12px}',
+    '.pdc-lab{font-size:10.5px;font-weight:800;letter-spacing:.8px;color:var(--pdc-faint,#6b7d90);margin-bottom:-6px}',
+    '.pdc-turn{border:1px solid var(--pdc-acc-l,#d9a98c);border-left:4px solid var(--pdc-acc,#a0522d);background:var(--pdc-acc-u,rgba(160,82,45,.10));border-radius:8px;padding:8px 10px}',
+    '.pdc-turn .pdc-lab{color:var(--pdc-acc,#a0522d);margin-bottom:2px}',
+    '.pdc-turn p{margin:0;font-size:14px;line-height:1.45;font-weight:600;color:var(--pdc-ink,#192a40)}',
+    '.pdc-wait{margin:-4px 0 0;font-size:12px;color:var(--pdc-faint,#6b7d90)}',
     '@media (max-width:900px){.pdc{width:auto;right:16px}}',
   ].join('\n');
 
@@ -99,17 +104,23 @@
       body = '<h3>That\'s the Workflow</h3><p class="pdc-say">' + esc(S.flow.wrap || 'That\'s the end of this workflow.') + '</p><div class="pdc-row"><button type="button" class="pdc-btn" data-pdc="back">Back</button>' +
         (S.endButtons || [{ key: 'end', label: 'End demo', pri: true }]).map(function (b) { return '<button type="button" class="pdc-btn' + (b.pri ? ' pri' : '') + '" data-pdc="btn" data-k="' + esc(b.key) + '">' + esc(b.label) + '</button>'; }).join('') + '</div>';
     } else {
-      var say = S.practice ? (s.doit || s.title) : s.say;
+      // v1.1: Practice shows Why (the talk track) and Your Turn (the instruction). Presenting is unchanged.
+      var waits = !!(s.click || s.route || s.appear || s.change);
+      var talkHtml = S.practice
+        ? ((s.say && !S.hideWhy ? '<div class="pdc-lab">WHY</div><p class="pdc-say">' + esc(s.say) + '</p>' : '') +
+          '<div class="pdc-turn"><div class="pdc-lab">YOUR TURN</div><p>' + esc(s.doit || s.title) + '</p></div>' +
+          (waits ? '<p class="pdc-wait">Waiting for you to click. Next skips it.</p>' : ''))
+        : (S.talk ? '<p class="pdc-say">' + esc(s.say) + '</p>' : '');
       body = '<div class="pdc-step">Step ' + (S.i + 1) + ' of ' + n + '</div><h3>' + esc(s.title) + '</h3>' +
         (here ? '' : '<div class="pdc-warn">You\'re on another page. <button type="button" class="pdc-lnk" data-pdc="home">Bring me back</button></div>') +
-        (S.talk || S.practice ? '<p class="pdc-say">' + esc(say) + '</p>' : '') +
+        talkHtml +
         (s.fill && here ? '<button type="button" class="pdc-btn pdc-fill" data-pdc="fill"' + (S.filling ? ' disabled' : '') + '>' + (S.filling ? 'Filling in...' : 'Fill it in for me') + '</button>' : '') +
         '<div class="pdc-bar"><div class="pdc-dots" aria-hidden="true">' + S.flow.steps.map(function (x, k) { return '<span class="' + (k < S.i ? 'd' : k === S.i ? 'on' : '') + '"></span>'; }).join('') + '</div>' +
         '<div class="pdc-row"><button type="button" class="pdc-btn" data-pdc="back"' + (S.i ? '' : ' disabled') + ' aria-label="Back (left arrow)">←</button>' +
         '<button type="button" class="pdc-btn' + (s.click || s.route || s.appear || s.change ? '' : ' pri') + '" data-pdc="next" aria-label="Next (right arrow)">' + (S.i === n - 1 ? 'Finish' : 'Next →') + '</button></div></div>';
     }
     d.panel.innerHTML = '<div class="pdc-head"><span class="pdc-kick">' + esc((S.flow.version === 'client' ? 'CLIENT VIEW · ' : 'GUIDED DEMO · ') + S.flow.title.toUpperCase()) + '</span>' +
-      '<div class="pdc-row"><button type="button" class="pdc-lnk" data-pdc="talk">' + (S.practice ? '' : S.talk ? 'Hide talk track' : 'Show talk track') + '</button><button type="button" class="pdc-x" data-pdc="end" aria-label="End demo (Esc)" title="End demo">×</button></div></div>' + who + body;
+      '<div class="pdc-row"><button type="button" class="pdc-lnk" data-pdc="' + (S.practice ? 'why' : 'talk') + '">' + (S.practice ? (S.hideWhy ? 'Show Why' : 'Hide Why') : S.talk ? 'Hide talk track' : 'Show talk track') + '</button><button type="button" class="pdc-x" data-pdc="end" aria-label="End demo (Esc)" title="End demo">×</button></div></div>' + who + body;
     S.drawnHere = here;
   }
 
@@ -225,6 +236,7 @@
     else if (a === 'home') go(step(), true);
     else if (a === 'fill') doFill();
     else if (a === 'talk') { S.talk = !S.talk; draw(); }
+    else if (a === 'why') { S.hideWhy = !S.hideWhy; draw(); }
     else if (a === 'end') end('esc');
     else if (a === 'btn') end(b.getAttribute('data-k'));
   }
