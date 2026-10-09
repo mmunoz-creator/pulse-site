@@ -423,7 +423,9 @@
     .dch-foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem 1.5rem;margin-top:auto;padding:1.2rem clamp(1rem,3.4vw,3rem);border-top:1px solid #d9e4ef;background:#fff;color:#4f6378;font-size:.86rem}
     .dch-gap{height:2rem}
     
-    @media(min-width:1000px){.dch-hero,.dch-tiles,.dch-foot{padding-left:calc(360px + 3rem)}}
+    .dch-tiles-wrap{margin-top:-3.4rem;padding:0 clamp(1rem,3.4vw,3rem)}
+    .dch-tiles-wrap .dch-tiles{margin-top:0;padding:0}
+    .dch-acts.split{justify-content:space-between}
     @media(max-width:760px){.dch-tiles{grid-template-columns:1fr}.dch-co{display:none}.dch-tile .ph{height:120px}}
     
     body .pdc .pdc-head>.pdc-row{flex-wrap:nowrap;flex-shrink:0}
@@ -504,11 +506,11 @@
       <h2 id="dchGreeting">Good morning, Carla.</h2>
       <p class="s">Harborview Markets' buildings, reports and modernization program, in one place. Choose where to go.</p>
     </div>
-    <div class="dch-tiles" id="dchTiles">
+    <div class="dch-tiles-wrap"><div class="dch-tiles" id="dchTiles">
       <div class="dch-tile">
         <div class="ph port"></div>
         <div class="bd"><span class="ap port">PULSE PORTFOLIO</span><span class="tg">Every property. One clear view.</span><span class="ds">Your sites and equipment, inspections, reports and capital plan.</span>
-          <div class="dch-acts"><button type="button" class="dch-open" data-dch-tile>Open Portfolio<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><button type="button" class="dch-link" id="dchRfps" data-dch-tile><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>Your RFPs and Bids</button></div>
+          <div class="dch-acts split"><button type="button" class="dch-open" data-dch-tile>Open Portfolio<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><button type="button" class="dch-link" id="dchRfps" data-dch-tile><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg>Your RFPs and Bids</button></div>
         </div>
       </div>
       <div class="dch-tile">
@@ -517,7 +519,7 @@
           <div class="dch-acts"><button type="button" class="dch-open" data-dch-tile>Open Modernization<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
         </div>
       </div>
-    </div>
+    </div></div>
     <div class="dch-gap"></div>
     <div class="dch-foot" id="dchFoot"><span>Questions? Contact your VDA account team.</span><span>For your security, PULSE signs you out after 30 minutes without activity.</span></div>
   </section>
@@ -529,7 +531,7 @@
         
         <button class="bell-btn" id="bellBtn" type="button" aria-label="Alerts" aria-haspopup="true" aria-expanded="false" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="bell-count" id="bellCount" hidden></span></button>
         <button class="profile-trigger" id="profileTrigger" type="button" aria-expanded="false"><span class="avatar" id="avatarInitials">P</span><span class="profile-name" id="profileName">Welcome</span><span class="chevron" aria-hidden="true"></span></button>
-        <div class="profile-menu" aria-label="Profile menu"><button type="button" data-message="Profile selected.">Your Profile</button><button id="manageUsersBtn" type="button" hidden>Manage Users</button><button id="developerBtn" type="button" hidden>Developer<span class="menu-count" id="devMenuCount" hidden></span></button><button id="dataUploadsBtn" type="button" hidden>Data uploads</button><button id="logoutBtn" type="button">Sign Out</button><div id="hubBuildLabel" class="build-label">PULSE Hub v1u</div></div>
+        <div class="profile-menu" aria-label="Profile menu"><button type="button" data-message="Profile selected.">Your Profile</button><button id="manageUsersBtn" type="button" hidden>Manage Users</button><button id="developerBtn" type="button" hidden>Developer<span class="menu-count" id="devMenuCount" hidden></span></button><button id="dataUploadsBtn" type="button" hidden>Data uploads</button><button id="logoutBtn" type="button">Sign Out</button><div id="hubBuildLabel" class="build-label">PULSE Hub v1u.1</div></div>
         <div class="alerts-pop" id="alertsPop" role="dialog" aria-label="Alerts"><div class="alerts-head"><strong id="alertsHeadTitle">Your alerts</strong><span id="alertsHeadSub"></span></div><ul class="alerts-list" id="alertsList"></ul><div class="alerts-foot"><button id="alertsMarkAll" type="button">Mark all as read</button><button class="muted" id="alertsOpenBoard" type="button">Open the build board</button></div></div>
       </div>
     </header>
