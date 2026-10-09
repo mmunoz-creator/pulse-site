@@ -424,6 +424,13 @@
     .dch-gap{height:2rem}
     
     .dch-tiles-wrap{margin-top:-3.4rem;padding:0 clamp(1rem,3.4vw,3rem)}
+    
+    .dch{color:#fff;background:linear-gradient(180deg,rgba(3,22,40,.80),rgba(3,27,49,.90) 45%,rgba(2,18,33,.96)),#031b30 url("/assets/vision-city-skyline.jpg") center 40%/cover no-repeat}
+    .dch-head{background:transparent;border-bottom:1px solid rgba(255,255,255,.12)}
+    .dch-hero{background:none;padding-bottom:1.9rem}
+    .dch-tiles-wrap{margin-top:0}
+    .dch-tile{color:#092544;border-color:transparent;box-shadow:0 24px 50px rgba(0,10,25,.45)}
+    .dch-foot{background:transparent;border-top-color:rgba(255,255,255,.12);color:rgba(255,255,255,.72)}
     .dch-tiles-wrap .dch-tiles{margin-top:0;padding:0}
     .dch-acts.split{justify-content:space-between}
     @media(max-width:760px){.dch-tiles{grid-template-columns:1fr}.dch-co{display:none}.dch-tile .ph{height:120px}}
@@ -531,7 +538,7 @@
         
         <button class="bell-btn" id="bellBtn" type="button" aria-label="Alerts" aria-haspopup="true" aria-expanded="false" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="bell-count" id="bellCount" hidden></span></button>
         <button class="profile-trigger" id="profileTrigger" type="button" aria-expanded="false"><span class="avatar" id="avatarInitials">P</span><span class="profile-name" id="profileName">Welcome</span><span class="chevron" aria-hidden="true"></span></button>
-        <div class="profile-menu" aria-label="Profile menu"><button type="button" data-message="Profile selected.">Your Profile</button><button id="manageUsersBtn" type="button" hidden>Manage Users</button><button id="developerBtn" type="button" hidden>Developer<span class="menu-count" id="devMenuCount" hidden></span></button><button id="dataUploadsBtn" type="button" hidden>Data uploads</button><button id="logoutBtn" type="button">Sign Out</button><div id="hubBuildLabel" class="build-label">PULSE Hub v1u.1</div></div>
+        <div class="profile-menu" aria-label="Profile menu"><button type="button" data-message="Profile selected.">Your Profile</button><button id="manageUsersBtn" type="button" hidden>Manage Users</button><button id="developerBtn" type="button" hidden>Developer<span class="menu-count" id="devMenuCount" hidden></span></button><button id="dataUploadsBtn" type="button" hidden>Data uploads</button><button id="logoutBtn" type="button">Sign Out</button><div id="hubBuildLabel" class="build-label">PULSE Hub v1u.2</div></div>
         <div class="alerts-pop" id="alertsPop" role="dialog" aria-label="Alerts"><div class="alerts-head"><strong id="alertsHeadTitle">Your alerts</strong><span id="alertsHeadSub"></span></div><ul class="alerts-list" id="alertsList"></ul><div class="alerts-foot"><button id="alertsMarkAll" type="button">Mark all as read</button><button class="muted" id="alertsOpenBoard" type="button">Open the build board</button></div></div>
       </div>
     </header>
