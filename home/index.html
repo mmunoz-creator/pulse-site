@@ -104,6 +104,8 @@
     .dev-badge.test::before{background:#3ccf7e}
     .notice-dialog.dev .bar{background:#f5a524}
     
+    
+    #hub-title .pulse-word{color:#0a5fb4}
     .pane-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:.2rem 1rem}
     .pane-manage{display:inline-flex;align-items:center;gap:.4rem;min-height:36px;padding:0 .7rem;color:#0a5fb4;border:1px solid transparent;border-radius:8px;background:transparent;font-size:.86rem;font-weight:700}
     .pane-manage:hover,.pane-manage:focus-visible{background:#eaf4fe;border-color:#c6e0f8}
@@ -621,7 +623,7 @@
         
         <button class="bell-btn" id="bellBtn" type="button" aria-label="Alerts" aria-haspopup="true" aria-expanded="false" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg><span class="bell-count" id="bellCount" hidden></span></button>
         <button class="profile-trigger" id="profileTrigger" type="button" aria-expanded="false"><span class="avatar" id="avatarInitials">P</span><span class="profile-name" id="profileName">Welcome</span><span class="chevron" aria-hidden="true"></span></button>
-        <div class="profile-menu" aria-label="Profile menu"><button type="button" data-message="Profile selected.">Your Profile</button><button id="manageUsersBtn" type="button" hidden>Manage Users</button><button id="manageAppsBtn" type="button" hidden>Manage Apps</button><button id="developerBtn" type="button" hidden>Developer<span class="menu-count" id="devMenuCount" hidden></span></button><button id="dataUploadsBtn" type="button" hidden>Data uploads</button><button id="logoutBtn" type="button">Sign Out</button><div id="hubBuildLabel" class="build-label">PULSE Hub v1v</div></div>
+        <div class="profile-menu" aria-label="Profile menu"><button type="button" data-message="Profile selected.">Your Profile</button><button id="manageUsersBtn" type="button" hidden>Manage Users</button><button id="manageAppsBtn" type="button" hidden>Manage Apps</button><button id="developerBtn" type="button" hidden>Developer<span class="menu-count" id="devMenuCount" hidden></span></button><button id="dataUploadsBtn" type="button" hidden>Data uploads</button><button id="logoutBtn" type="button">Sign Out</button><div id="hubBuildLabel" class="build-label">PULSE Hub v1v.1</div></div>
         <div class="alerts-pop" id="alertsPop" role="dialog" aria-label="Alerts"><div class="alerts-head"><strong id="alertsHeadTitle">Your alerts</strong><span id="alertsHeadSub"></span></div><ul class="alerts-list" id="alertsList"></ul><div class="alerts-foot"><button id="alertsMarkAll" type="button">Mark all as read</button><button class="muted" id="alertsOpenBoard" type="button">Open the build board</button></div></div>
       </div>
     </header>
@@ -641,7 +643,7 @@
         </div>
       </section>
       <section class="platform-pane" aria-labelledby="hub-title">
-        <div class="pane-head"><h2 id="hub-title">Your PULSE Platforms</h2><button type="button" class="pane-manage" id="manageAppsLink" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16zM14 6l4 4"/></svg>Manage apps</button></div>
+        <div class="pane-head"><h2 id="hub-title">Your <span class="pulse-word">PULSE</span> Platforms</h2><button type="button" class="pane-manage" id="manageAppsLink" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16zM14 6l4 4"/></svg>Manage apps</button></div>
         <div class="platform-list" id="platformList"></div>
         <div class="platform-empty" id="platformEmpty" hidden><span class="platform-empty-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5zM12 15v3"/></svg></span><p>You don't have access to any PULSE platforms yet. Contact your PULSE admin.</p></div>
       </section>
