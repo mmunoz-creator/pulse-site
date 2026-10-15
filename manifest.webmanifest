@@ -1,0 +1,21 @@
+{
+  "name": "PULSE",
+  "short_name": "PULSE",
+  "description": "Better Buildings. Brighter Possibilities. Every PULSE platform in one place.",
+  "id": "/home/",
+  "start_url": "/home/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#052242",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "/assets/app/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/app/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/app/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Market Insights", "url": "/home/#/insights", "icons": [{ "src": "/assets/app/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Get Support", "url": "/home/#/support", "icons": [{ "src": "/assets/app/icon-192.png", "sizes": "192x192" }] }
+  ]
+}
