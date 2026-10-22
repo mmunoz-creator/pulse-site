@@ -1,0 +1,225 @@
+{
+ "about": "City photos for the Hub home (page v2l). key, name, lat/lon (city center, for the nearest photo), day, night (optional). Add a city: upload <key>-day.jpg (and -night.jpg) to /assets/hero/ and add a line here.",
+ "photos": [
+  {
+   "key": "atlanta",
+   "name": "Atlanta",
+   "region": "GA",
+   "country": "US",
+   "lat": 33.75,
+   "lon": -84.39,
+   "day": "/assets/hero/atlanta-day.jpg",
+   "night": "/assets/hero/atlanta-night.jpg"
+  },
+  {
+   "key": "austin",
+   "name": "Austin",
+   "region": "TX",
+   "country": "US",
+   "lat": 30.27,
+   "lon": -97.74,
+   "day": "/assets/hero/austin-day.jpg",
+   "night": "/assets/hero/austin-night.jpg"
+  },
+  {
+   "key": "boston",
+   "name": "Boston",
+   "region": "MA",
+   "country": "US",
+   "lat": 42.36,
+   "lon": -71.06,
+   "day": "/assets/hero/boston-day.jpg",
+   "night": "/assets/hero/boston-night.jpg"
+  },
+  {
+   "key": "calgary",
+   "name": "Calgary",
+   "region": "AB",
+   "country": "CA",
+   "lat": 51.05,
+   "lon": -114.07,
+   "day": "/assets/hero/calgary-day.jpg",
+   "night": "/assets/hero/calgary-night.jpg"
+  },
+  {
+   "key": "chicago",
+   "name": "Chicago",
+   "region": "IL",
+   "country": "US",
+   "lat": 41.88,
+   "lon": -87.63,
+   "day": "/assets/hero/chicago-day.jpg",
+   "night": "/assets/hero/chicago-night.jpg"
+  },
+  {
+   "key": "dallas",
+   "name": "Dallas",
+   "region": "TX",
+   "country": "US",
+   "lat": 32.78,
+   "lon": -96.8,
+   "day": "/assets/hero/dallas-day.jpg",
+   "night": "/assets/hero/dallas-night.jpg"
+  },
+  {
+   "key": "denver",
+   "name": "Denver",
+   "region": "CO",
+   "country": "US",
+   "lat": 39.74,
+   "lon": -104.99,
+   "day": "/assets/hero/denver-day.jpg",
+   "night": "/assets/hero/denver-night.jpg"
+  },
+  {
+   "key": "houston",
+   "name": "Houston",
+   "region": "TX",
+   "country": "US",
+   "lat": 29.76,
+   "lon": -95.37,
+   "day": "/assets/hero/houston-day.jpg",
+   "night": "/assets/hero/houston-night.jpg"
+  },
+  {
+   "key": "london",
+   "name": "London",
+   "region": "England",
+   "country": "GB",
+   "lat": 51.51,
+   "lon": -0.13,
+   "day": "/assets/hero/london-day.jpg",
+   "night": "/assets/hero/london-night.jpg"
+  },
+  {
+   "key": "los-angeles",
+   "name": "Los Angeles",
+   "region": "CA",
+   "country": "US",
+   "lat": 34.05,
+   "lon": -118.24,
+   "day": "/assets/hero/los-angeles-day.jpg",
+   "night": "/assets/hero/los-angeles-night.jpg"
+  },
+  {
+   "key": "miami",
+   "name": "Miami",
+   "region": "FL",
+   "country": "US",
+   "lat": 25.76,
+   "lon": -80.19,
+   "day": "/assets/hero/miami-day.jpg",
+   "night": "/assets/hero/miami-night.jpg"
+  },
+  {
+   "key": "montreal",
+   "name": "Montreal",
+   "region": "QC",
+   "country": "CA",
+   "lat": 45.5,
+   "lon": -73.57,
+   "day": "/assets/hero/montreal-day.jpg",
+   "night": "/assets/hero/montreal-night.jpg"
+  },
+  {
+   "key": "new-york",
+   "name": "New York",
+   "region": "NY",
+   "country": "US",
+   "lat": 40.71,
+   "lon": -74.01,
+   "day": "/assets/hero/new-york-day.jpg",
+   "night": "/assets/hero/new-york-night.jpg"
+  },
+  {
+   "key": "orlando",
+   "name": "Orlando",
+   "region": "FL",
+   "country": "US",
+   "lat": 28.54,
+   "lon": -81.38,
+   "day": "/assets/hero/orlando-day.jpg",
+   "night": "/assets/hero/orlando-night.jpg"
+  },
+  {
+   "key": "philadelphia",
+   "name": "Philadelphia",
+   "region": "PA",
+   "country": "US",
+   "lat": 39.95,
+   "lon": -75.17,
+   "day": "/assets/hero/philadelphia-day.jpg",
+   "night": "/assets/hero/philadelphia-night.jpg"
+  },
+  {
+   "key": "phoenix",
+   "name": "Phoenix",
+   "region": "AZ",
+   "country": "US",
+   "lat": 33.45,
+   "lon": -112.07,
+   "day": "/assets/hero/phoenix-day.jpg",
+   "night": "/assets/hero/phoenix-night.jpg"
+  },
+  {
+   "key": "san-diego",
+   "name": "San Diego",
+   "region": "CA",
+   "country": "US",
+   "lat": 32.72,
+   "lon": -117.16,
+   "day": "/assets/hero/san-diego-day.jpg",
+   "night": "/assets/hero/san-diego-night.jpg"
+  },
+  {
+   "key": "san-francisco",
+   "name": "San Francisco",
+   "region": "CA",
+   "country": "US",
+   "lat": 37.77,
+   "lon": -122.42,
+   "day": "/assets/hero/san-francisco-day.jpg",
+   "night": "/assets/hero/san-francisco-night.jpg"
+  },
+  {
+   "key": "seattle",
+   "name": "Seattle",
+   "region": "WA",
+   "country": "US",
+   "lat": 47.61,
+   "lon": -122.33,
+   "day": "/assets/hero/seattle-day.jpg",
+   "night": "/assets/hero/seattle-night.jpg"
+  },
+  {
+   "key": "toronto",
+   "name": "Toronto",
+   "region": "ON",
+   "country": "CA",
+   "lat": 43.65,
+   "lon": -79.38,
+   "day": "/assets/hero/toronto-day.jpg",
+   "night": "/assets/hero/toronto-night.jpg"
+  },
+  {
+   "key": "vancouver",
+   "name": "Vancouver",
+   "region": "BC",
+   "country": "CA",
+   "lat": 49.28,
+   "lon": -123.12,
+   "day": "/assets/hero/vancouver-day.jpg",
+   "night": "/assets/hero/vancouver-night.jpg"
+  },
+  {
+   "key": "washington-dc",
+   "name": "Washington, D.C.",
+   "region": "DC",
+   "country": "US",
+   "lat": 38.91,
+   "lon": -77.04,
+   "day": "/assets/hero/washington-dc-day.jpg",
+   "night": "/assets/hero/washington-dc-night.jpg"
+  }
+ ]
+}
