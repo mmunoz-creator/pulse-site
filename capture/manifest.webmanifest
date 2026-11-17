@@ -3,7 +3,7 @@
   "name": "PULSE Capture",
   "short_name": "Capture",
   "description": "Capture the lead. Keep the conversation going.",
-  "start_url": "/capture/#/capture",
+  "start_url": "/capture/",
   "scope": "/",
   "display": "standalone",
   "orientation": "portrait",
